@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Loader from "../loader/Loader";
 import "./sass/style.css";
 
@@ -28,8 +28,8 @@ export default function Main() {
           if (count >= 5) {
             setCount(0);
           }
+          setLoader(false);
         });
-      setLoader(false);
     } catch (error) {
       console.log(error);
     }
