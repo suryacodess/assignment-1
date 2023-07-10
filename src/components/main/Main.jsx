@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Loader from "../loader/Loader";
 import "./sass/style.css";
 
+//home screen
 function User() {
   return (
     <>
@@ -13,10 +14,11 @@ function User() {
 }
 
 export default function Main() {
-  const [user, setUser] = useState([]);
-  const [count, setCount] = useState(0);
-  const [loader, setLoader] = useState(false);
+  const [user, setUser] = useState([]); //state for users
+  const [count, setCount] = useState(0); //inital state for count
+  const [loader, setLoader] = useState(false); //initial state for loader
 
+  //function for getusers
   const handleGetUsers = () => {
     try {
       setLoader(true);
@@ -37,10 +39,12 @@ export default function Main() {
 
   return (
     <>
+    {/* header section */}
       <header className="header">
         <div className="header__title">
           <h1>GETUsers</h1>
         </div>
+        {/* button for get users */}
         <div className="header__button">
           <button onClick={handleGetUsers}>get users</button>
         </div>
